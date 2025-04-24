@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
         tr.selected {
             background-color: #f0f8ff;
         }
+
         .modal {
             display: none;
             position: fixed;
@@ -20,8 +22,9 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgba(0, 0, 0, 0.4);
         }
+
         .modal-contenido {
             background-color: #fefefe;
             margin: 15% auto;
@@ -31,19 +34,23 @@
             max-width: 600px;
             border-radius: 5px;
         }
+
         .modal-titulo {
             margin-top: 0;
             color: #003366;
         }
+
         .modal-botones {
             margin-top: 20px;
             text-align: right;
         }
+
         .modal-mensaje {
             margin-bottom: 20px;
         }
     </style>
 </head>
+
 <body>
     <div class="pagina-contenedor">
         <nav class="navegacion">
@@ -61,14 +68,15 @@
         <div id="menu-lateral" class="menu-lateral">
             <ul>
                 <li><a href=""><span class="icono-menu icono-usuario"></span> Cargando...</a></li>
-                <li><a href="../html/coordinador.html"><span class="icono-menu icono-menu"></span> Menú principal</a></li>
+                <li><a href="../html/coordinador.html"><span class="icono-menu icono-menu"></span> Menú principal</a>
+                </li>
                 <li><a href="../php/cerrar-sesion.php"><span class="icono-menu salir"></span> Cerrar sesión</a></li>
                 <li><a id="boton-ocultar"><span class="icono-menu ocultar"></span> Ocultar</a></li>
             </ul>
         </div>
 
-         <!-- Breadcrumbs dinámico -->
-         <div class="navegacion-secundaria">
+        <!-- Breadcrumbs dinámico -->
+        <div class="navegacion-secundaria">
             <div class="contenedor-nav-secundaria">
                 <ul class="menu-secundario">
                     <!-- Menú de Inicio -->
@@ -114,7 +122,7 @@
                 </ul>
             </div>
         </div>
-        
+
         <main class="contenido-principal">
             <div class="contenedor">
                 <h1 class="titulo-principal">Cronograma de Actividades</h1>
@@ -127,17 +135,15 @@
                             <!-- Campos ocultos para IDs -->
                             <input type="hidden" id="planeacion-id" name="planeacion_id">
                             <input type="hidden" id="cronograma-id" name="cronograma_id">
-                            
+
                             <div class="campo-formulario">
                                 <label for="nombre-actividad">Nombre de la actividad</label>
-                                <input type="text" id="nombre-actividad" name="nombre" 
-                                       >
+                                <input type="text" id="nombre-actividad" name="nombre">
                             </div>
 
                             <div class="campo-formulario">
                                 <label for="descripcion-actividad">Descripción</label>
-                                <input type="text" id="descripcion-actividad" name="descripcion" 
-                                       >
+                                <input type="text" id="descripcion-actividad" name="descripcion">
                             </div>
 
                             <div class="campo-formulario">
@@ -146,7 +152,8 @@
                             </div>
 
                             <div class="contenedor-boton">
-                            <button type="button" class="boton-agregar" onclick="agregarActividad()">AGREGAR</button>
+                                <button type="button" class="boton-agregar"
+                                    onclick="agregarActividad()">AGREGAR</button>
                             </div>
                         </form>
 
@@ -165,11 +172,14 @@
                                 </tbody>
                             </table>
                         </div>
-                        
+
                         <!-- Botones de acción bajo la tabla -->
-                        <div class="contenedor-botones-accion" style="margin-top: 20px; display: flex; justify-content: center; gap: 15px;">
+                        <div class="contenedor-botones-accion"
+                            style="margin-top: 20px; display: flex; justify-content: center; gap: 15px;">
                             <button type="button" id="boton-editar" class="boton-guardar" disabled>EDITAR</button>
                             <button type="button" id="boton-eliminar" class="boton-guardar" disabled>ELIMINAR</button>
+                            <button type="button" id="boton-ver-calendario" class="boton-guardar">VER
+                                CALENDARIO</button>
                         </div>
                     </div>
                 </div>
@@ -182,7 +192,7 @@
                 <h3 class="modal-titulo">Editar Actividad</h3>
                 <form id="formulario-editar">
                     <input type="hidden" id="editar_actividad_id" name="actividad_id">
-                    
+
                     <div class="campo-formulario">
                         <label for="editar_nombre">Nombre de la actividad</label>
                         <input type="text" id="editar_nombre" name="nombre" required>
@@ -219,6 +229,17 @@
             </div>
         </div>
 
+        <!-- Modal de calendario -->
+        <div id="modal-calendario" class="modal">
+            <div class="modal-contenido" style="width: 90%; max-width: 900px;">
+                <h3 class="modal-titulo">Calendario de Actividades</h3>
+                <div id="calendario"></div>
+                <div class="modal-botones">
+                    <button id="boton-cerrar-calendario" class="boton-cancelar">CERRAR</button>
+                </div>
+            </div>
+        </div>
+
         <footer class="pie-pagina">
             <div class="contenedor">
                 <div class="derechos">
@@ -230,5 +251,10 @@
 
     <script src="../js/menu.js"></script>
     <script src="../js/coordinador-cronograma-funciones.js"></script>
+    <script src="../js/calendario-coordinador.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.0/locales/es.js"></script>
 </body>
+
 </html>
