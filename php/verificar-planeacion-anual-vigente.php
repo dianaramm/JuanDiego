@@ -14,7 +14,7 @@ try {
               FROM planeacion 
               WHERE solicitante_id = ? 
               AND validez_id = 1 
-              AND estatus_id IN (1,2,3,4,5,6)";
+              AND estatus_id IN (1,2,3,4,6)";
 
     $stmt = $conexion->prepare($query);
     if (!$stmt) {
