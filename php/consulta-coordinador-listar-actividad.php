@@ -24,17 +24,10 @@ $resultado = $stmt->get_result();
 
 while ($fila = $resultado->fetch_assoc()) {
     echo "<tr>";
+    echo "<td class='text-center'><input type='radio' name='actividad' value='" . $fila['actividad_id'] . "' class='seleccion-actividad'></td>";
     echo "<td>" . htmlspecialchars($fila['nombre']) . "</td>";
     echo "<td>" . htmlspecialchars($fila['descripcion']) . "</td>";
     echo "<td>" . date('d/m/Y', strtotime($fila['fecha'])) . "</td>";
-    echo "<td class='acciones'>";
-    echo "<button onclick='editarActividad(" . $fila['actividad_id'] . ")' class='boton-editar'>";
-    echo "<img src='../img/icono-editar.png' alt='Editar' class='icono-accion'>";
-    echo "</button>";
-    echo "<button onclick='eliminarActividad(" . $fila['actividad_id'] . ")' class='boton-eliminar'>";
-    echo "<img src='../img/icono-eliminar.png' alt='Eliminar' class='icono-accion'>";
-    echo "</button>";
-    echo "</td>";
     echo "</tr>";
 }
 
