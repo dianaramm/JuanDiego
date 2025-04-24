@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
                                            FROM planeacion 
                                            WHERE solicitante_id = ? 
                                            AND validez_id = 1 
-                                           AND estatus_id IN (1,2,3,4,5)");
+                                           AND estatus_id IN (1,2,3,4,6)");
             $verificar->bind_param("s", $usuario_id);
             $verificar->execute();
             $resultado = $verificar->get_result();
