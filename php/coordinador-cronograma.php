@@ -6,6 +6,43 @@
     <title>Centro Comunitario Juan Diego - Cronograma</title>
     <link rel="stylesheet" href="../css/estilos-formularios.css">
     <link rel="stylesheet" href="../css/coordinador.css">
+    <link rel="stylesheet" href="../css/estilos-adicionales.css">
+    <style>
+        tr.selected {
+            background-color: #f0f8ff;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-contenido {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 5px;
+        }
+        .modal-titulo {
+            margin-top: 0;
+            color: #003366;
+        }
+        .modal-botones {
+            margin-top: 20px;
+            text-align: right;
+        }
+        .modal-mensaje {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="pagina-contenedor">
@@ -117,10 +154,10 @@
                             <table class="tabla">
                                 <thead>
                                     <tr>
+                                        <th width="5%">Seleccionar</th>
                                         <th>Nombre de la actividad</th>
                                         <th>Descripción</th>
                                         <th>Fecha</th>
-                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tabla-actividades">
@@ -128,10 +165,59 @@
                                 </tbody>
                             </table>
                         </div>
+                        
+                        <!-- Botones de acción bajo la tabla -->
+                        <div class="contenedor-botones-accion" style="margin-top: 20px; display: flex; justify-content: center; gap: 15px;">
+                            <button type="button" id="boton-editar" class="boton-guardar" disabled>EDITAR</button>
+                            <button type="button" id="boton-eliminar" class="boton-guardar" disabled>ELIMINAR</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
+
+        <!-- Modal para editar actividad -->
+        <div id="modal-editar" class="modal">
+            <div class="modal-contenido">
+                <h3 class="modal-titulo">Editar Actividad</h3>
+                <form id="formulario-editar">
+                    <input type="hidden" id="editar_actividad_id" name="actividad_id">
+                    
+                    <div class="campo-formulario">
+                        <label for="editar_nombre">Nombre de la actividad</label>
+                        <input type="text" id="editar_nombre" name="nombre" required>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="editar_descripcion">Descripción</label>
+                        <input type="text" id="editar_descripcion" name="descripcion" required>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="editar_fecha">Fecha</label>
+                        <input type="date" id="editar_fecha" name="fecha" required>
+                    </div>
+
+                    <div class="modal-botones">
+                        <button type="button" id="boton-actualizar" class="boton-guardar">ACTUALIZAR</button>
+                        <button type="button" id="boton-cancelar-editar" class="boton-cancelar">CANCELAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal de confirmación -->
+        <div id="modal-confirmacion" class="modal">
+            <div class="modal-contenido">
+                <div id="modal-mensaje" class="modal-mensaje">
+                    ¿Está seguro de eliminar esta actividad? Esta acción no se puede deshacer.
+                </div>
+                <div class="modal-botones">
+                    <button id="modal-confirmar" class="boton-guardar">CONFIRMAR</button>
+                    <button id="modal-cancelar" class="boton-cancelar">CANCELAR</button>
+                </div>
+            </div>
+        </div>
 
         <footer class="pie-pagina">
             <div class="contenedor">
