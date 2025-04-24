@@ -233,10 +233,12 @@
         <div id="modal-calendario" class="modal">
             <div class="modal-contenido" style="width: 90%; max-width: 900px;">
                 <h3 class="modal-titulo">Calendario de Actividades</h3>
-                <div id="calendario"></div>
-                <div class="modal-botones">
+                <div class="modal-botones" style="margin-bottom: 20px; text-align: right;">
+                    <button id="boton-imprimir-calendario" class="boton-guardar"
+                        style="background-color: #003366;">IMPRIMIR</button>
                     <button id="boton-cerrar-calendario" class="boton-cancelar">CERRAR</button>
                 </div>
+                <div id="calendario"></div>
             </div>
         </div>
 
