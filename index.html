@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Comunitario Juan Diego - Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <nav class="navegacion">
+        <div class="contenedor">
+            <a href="index.html" class="logo">
+                <img src="img/empresa.png" alt="Logo Centro Comunitario Juan Diego" class="logo-img">
+                <span class="logo-texto">Centro Comunitario Juan Diego</span>
+            </a>
+
+        </div>
+    </nav>
+
+    <main class="contenido-principal">
+        <div class="contenedor-login">
+            <div class="icono-usuario">
+                <img src="img/icono-usuario.png" alt="Icono de usuario">
+            </div>
+            <form id="formularioLogin" action="php/login.php" method="POST">
+                <div class="campo">
+                    <label for="correo">Correo o usuario</label>
+                    <input type="text" id="correo" name="correo" required>
+                </div>
+                <div class="campo">
+                    <label for="clave">Contraseña</label>
+                    <input type="password" id="clave" name="clave" required>
+                </div>
+
+                <div class="g-recaptcha" data-sitekey="6LeijworAAAAALggXTqoCKmBWd6qPoZMnQPLXEQA"></div>
+                <button type="submit" class="boton-iniciar">INICIAR SESIÓN</button> 
+                
+            </form>
+        </div>
+        <!--Captcha-->
+        <div>
+            </div>
+
+        </div>
+    </main>
+
+
+
+
+    <footer class="pie-pagina">
+        <div class="contenedor">
+            <div class="columna-footer">
+                <h3>Acerca de Nosotros</h3>
+                <p>El Centro Comunitario Juan Diego es un espacio <br>dedicado al desarrollo y bienestar de nuestra
+                    comunidad.</p>
+            </div>
+
+            <div class="columna-footer">
+                <h3>Contacto</h3>
+                <p>Av Tezozomoc S/N<br> Alfredo Baranda <br>56610 <br> Estado de Mexico, Valle de Chalco<br></p>
+            </div>
+        </div>
+        <div class="derechos">
+            <p>&copy; 2024 Centro Comunitario Juan Diego. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>

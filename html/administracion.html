@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Comunitario Juan Diego - Gestión de Planeación</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="../css/estilos-formularios.css">
+</head>
+
+<body>
+    <nav class="navegacion">
+        <div class="contenedor">
+
+            <a href="administracion.html" class="logo">
+                <img src="../img/empresa.png" alt="Logo Centro Comunitario Juan Diego" class="logo-img">
+                <span class="logo-texto">Centro Comunitario Juan Diego</span>
+            </a>
+
+            <button id="menu-toggle" class="menu-toggle">
+                <span class="icono-menu-toggle"></span>
+            </button>
+            
+        </div>
+    </nav>
+
+    <div class="contenedor-principal">
+        <!-- Menú lateral ahora dentro de un aside -->
+        <aside id="menu-lateral" class="menu-lateral">
+            <ul>
+                <li><a href=""><span class="icono-menu icono-usuario"></span> Cargando...</a></li> 
+                <li><a href="../php/cerrar-sesion.php"><span class="icono-menu icono-salir"></span> Cerrar sesión</a></li>
+                <li><a id="boton-ocultar"><span class="icono-menu icono-ocultar"></span> Ocultar</a></li>
+            </ul>
+        </aside>      
+
+        <main class="contenido-principal">
+
+
+            <div class="contenedor">
+                <h1 class="titulo-principal">Gestión de Planeación</h1>
+                <div class="grid-tarjetas">
+                    <a href="../php/credenciales-alta.php" class="tarjeta">
+                        <img src="../img/icono-calendario.png" alt="Icono Calendario" class="icono-tarjeta">
+                        <h2>Credenciales</h2>
+                    </a>
+
+                    <a href="../php/planeacion-anual.php" class="tarjeta">
+                        <img src="../img/icono-grafico.png" alt="Icono Gráfico" class="icono-tarjeta">
+                        <h2>Control planeación anual</h2>
+                    </a>
+
+                    <a href="../php/carta-descriptiva.php" class="tarjeta">
+                        <img src="../img/icono-historial.png" alt="Icono Carta" class="icono-tarjeta">
+                        <h2>Planeaciones activas</h2>
+                    </a>
+
+                    <a href="../php/solicitudes-plazas-admin.php" class="tarjeta">
+                        <img src="../img/icono-plaza.png" alt="Icono Plaza" class="icono-tarjeta">
+                        <h2>Solicitud de plazas</h2>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="pie-pagina">
+        <div class="contenedor">
+            <div class="derechos">
+                <p>&copy; 2024 Centro Comunitario Juan Diego. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/menu.js"></script>
+    <script src="../js/verificar-sesión.js"></script>
+    <script src="../js/breadcrumbs.js"></script>
+</body>
+</html>

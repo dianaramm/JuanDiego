@@ -1,0 +1,110 @@
+/* Estilos adicionales para funcionalidades específicas */
+
+/* Estilos para los radio buttons en la tabla */
+.tabla input[type="radio"] {
+    cursor: pointer;
+}
+
+/* Estilos para filas seleccionadas en la tabla */
+.tabla tr.selected {
+    background-color: #f0f7fa;
+}
+
+/* Contenedor para los botones de acción principales */
+.contenedor-botones-accion {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para botones deshabilitados */
+.boton-guardar:disabled,
+.boton-rechazar:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Estilo especial para el botón rechazar */
+.boton-rechazar {
+    height: 45px;
+    min-width: 180px;
+    padding: 0 30px;
+    background-color: white;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.boton-rechazar:hover {
+    background-color: #f8f9fa;
+    border-color: #c8c8c8;
+}
+
+/* Estilos para la ventana modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-contenido {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-mensaje {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.modal-botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Estilos para los botones del modal */
+.modal-botones button {
+    min-width: 120px;
+    height: 45px;
+    padding: 0 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Estilos para el botón Cancelar en el modal */
+.modal-botones .boton-cancelar {
+    background-color: white;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.modal-botones .boton-cancelar:hover {
+    background-color: #f8f9fa;
+    border-color: #c8c8c8;
+}

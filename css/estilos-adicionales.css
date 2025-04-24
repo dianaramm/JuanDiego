@@ -1,0 +1,346 @@
+/* Estilos para los radio buttons en la tabla */
+.tabla input[type="radio"] {
+    cursor: pointer;
+}
+
+/* Estilos para filas seleccionadas en la tabla */
+.tabla tr.selected {
+    background-color: #f0f7fa;
+}
+
+/* Contenedor para los botones de acción principales */
+.contenedor-botones-accion,
+.contenedor-botones-principales {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para botones deshabilitados */
+.boton-guardar:disabled,
+.boton-rechazar:disabled,
+.boton-cancelar:disabled,
+.boton-enviar:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Estilo base común para todos los botones de acción */
+.boton-guardar,
+.boton-cancelar,
+.boton-rechazar,
+.boton-enviar,
+#EDITAR,
+#ELIMINAR,
+#modal-confirmar,
+#modal-cancelar {
+    height: 45px;
+    padding: 0 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    text-align: center;
+}
+
+/* Estilos específicos por tipo de botón */
+.boton-guardar,
+#EDITAR,
+#modal-confirmar {
+    background-color: #003366;
+    color: white;
+}
+
+.boton-guardar:hover,
+#EDITAR:hover,
+#modal-confirmar:hover {
+    background-color: #002347;
+}
+
+.boton-cancelar,
+#ELIMINAR,
+#modal-cancelar {
+    background-color: #6c757d;
+    color: white;
+}
+
+.boton-cancelar:hover,
+#ELIMINAR:hover,
+#modal-cancelar:hover {
+    background-color: #5a6268;
+}
+
+.boton-rechazar {
+    background-color: white;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.boton-rechazar:hover {
+    background-color: #f8f9fa;
+    border-color: #c8c8c8;
+}
+
+.boton-enviar {
+    background-color: #28a745;
+    color: white;
+}
+
+.boton-enviar:hover {
+    background-color: #218838;
+}
+
+/* Estilos para la ventana modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-contenido {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-mensaje {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.modal-botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Estilo para mensajes de notificación */
+.mensaje {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    text-align: center;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.3s ease-in-out;
+    min-width: 300px;
+}
+
+.mensaje.exito {
+    background-color: #44aa44;
+    color: white;
+}
+
+.mensaje.error {
+    background-color: #ff4444;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* Estilos para campos con error */
+.campo-error {
+    border-color: #ff4444 !important;
+    box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.1) !important;
+}
+
+/* Estilos para los modales */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-contenido {
+    background-color: #fefefe;
+    margin: 2% auto;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: modalFadeIn 0.3s ease-in-out;
+    position: relative;
+}
+
+.modal-titulo {
+    color: #003366;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.modal-mensaje {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos para la tabla */
+.tabla-contenedor {
+    margin-top: 30px;
+}
+
+/* Estilos específicos para los botones de acción */
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.boton-editar,
+.boton-eliminar,
+.boton-enviar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.2s ease;
+}
+
+.boton-editar:hover,
+.boton-eliminar:hover,
+.boton-enviar:hover {
+    transform: scale(1.1);
+}
+
+.icono-accion {
+    width: 24px;
+    height: 24px;
+}
+
+/* Texto informativo en tabla */
+.texto-info {
+    color: #666;
+    font-style: italic;
+    display: block;
+    text-align: center;
+}
+
+/* Mejoras para campos de formulario */
+.formulario-planeacion textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Campos del modal */
+.modal .campo-formulario {
+    margin-bottom: 15px;
+}
+
+.modal .campo-formulario label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.modal .campo-formulario input,
+.modal .campo-formulario textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.modal .campo-formulario textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Estilos específicos para EDITAR y ELIMINAR */
+#EDITAR,
+#ELIMINAR {
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px;
+}
+
+/* Arreglar botones en vista móvil */
+@media (max-width: 768px) {
+    .modal-contenido {
+        width: 95%;
+        margin: 10% auto;
+        padding: 15px;
+    }
+    
+    .acciones {
+        flex-direction: column;
+    }
+    
+    .contenedor-botones-principales,
+    .contenedor-botones-accion,
+    .modal-botones {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .boton-guardar,
+    .boton-cancelar,
+    .boton-rechazar,
+    .boton-enviar,
+    #EDITAR,
+    #ELIMINAR,
+    #modal-confirmar,
+    #modal-cancelar {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .mensaje {
+        width: 90%;
+        max-width: none;
+    }
+}

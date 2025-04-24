@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Centro Comunitario Juan Diego - Gestión de Planeación</title>
+    <link rel="stylesheet" href="../css/estilos-formularios.css">
+    <link rel="stylesheet" href="../css/breadcrumbs.css">
+
+</head>
+
+<body>
+    <div class="pagina-contenedor">
+        <nav class="navegacion">
+            <div class="contenedor">
+                <a href="administracion.html" class="logo">
+                    <img src="../img/empresa.png" alt="Logo Centro Comunitario Juan Diego" class="logo-img">
+                    <span class="logo-texto">Centro Comunitario Juan Diego</span>
+                </a>
+                <button id="menu-toggle" class="menu-toggle">
+                    <span class="icono-menu-toggle"></span>
+                </button>
+            </div>
+        </nav>
+
+        <div id="menu-lateral" class="menu-lateral">
+            <ul>
+                <li><a href="#"><span class="icono-menu icono-usuario"></span> Usuario</a></li>
+                <li><a href="administracion.html"><span class="icono-menu icono-menu"></span> Menú principal</a></li>
+                <li><a href="#"><span class="icono-menu icono-salir"></span> Cerrar sesión</a></li>
+                <li><a id="boton-ocultar"><span class="icono-menu icono-ocultar"></span> Ocultar</a></li>
+            </ul>
+        </div>
+
+        <!-- Breadcrumbs dinámico -->
+        <div class="migas-pan">
+            <div class="contenedor">
+                <ul class="ruta-navegacion">
+                    <li class="item-ruta"><a href="../html/administracion.html" class="enlace-ruta">Inicio</a></li>
+                    <li class="separador-ruta">&gt;</li>
+                    <li class="item-ruta"><a href="#" class="enlace-ruta" id="modulo-actual"></a></li>
+                    <li class="separador-ruta">&gt;</li>
+                    <li class="item-ruta actual"><span id="pagina-actual"></span></li>
+                </ul>
+            </div>
+        </div>
+
+        <main class="contenido-principal">
+            <div class="contenedor">
+
+                <!-- Componente de migas de pan con datos estáticos -->
+                <div class="breadcrumbs-container">
+                    <nav class="breadcrumbs" aria-label="Navegación de migas de pan">
+                        <ol id="breadcrumbs-list" data-path="Inicio,Administración,Credenciales">
+                            <!-- Las migas se generarán con JavaScript -->
+                        </ol>
+                    </nav>
+                </div>
+
+                <h1 class="titulo-principal">Credenciales</h1>
+
+                <div class="grid-tarjetas">
+                    <a href="../php/credenciales-alta.php" class="tarjeta">
+                        <img src="../img/icono-credenciales-altas.png" alt="Icono Credenciales altas"
+                            class="icono-tarjeta">
+                        <h2>Alta de credenciales</h2>
+                    </a>
+
+                    <a href="../php/credenciales-activas.php" class="tarjeta">
+                        <img src="../img/icono-credenciales-activas.png" alt="Icono Credenciales activas"
+                            class="icono-tarjeta">
+                        <h2>Credenciales activas</h2>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="pie-pagina">
+            <div class="contenedor">
+                <div class="derechos">
+                    <p>&copy; 2024 Centro Comunitario Juan Diego. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/menu.js"></script>
+    <script src="../js/verificar-sesión.js"></script>
+    <script src="../js/breadcrumbs.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilos de la navegación */
+.navegacion {
+    background-color: #003366;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navegacion .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navegacion .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.navegacion .logo-img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+.navegacion .logo-texto {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.navegacion .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navegacion .menu li {
+    margin-left: 30px;
+}
+
+.navegacion .menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.navegacion .menu a:hover {
+    color: #ffffff;
+}
+
+/* Estilos del contenido principal */
+.contenido-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+}
+
+.contenedor-login {
+    background-color: white;
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+.icono-usuario {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.icono-usuario img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.campo input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.campo input:focus {
+    border-color: #003366;
+    outline: none;
+}
+
+.boton-iniciar {
+    width: 100%;
+    padding: 12px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-iniciar:hover {
+    background-color: #004080;
+}
+
+.enlaces-adicionales {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.enlaces-adicionales a {
+    color: #003366;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.enlaces-adicionales a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos del pie de página */
+.pie-pagina {
+    background-color: #003366;
+    color: white;
+    padding: 30px 0 10px;
+}
+
+.pie-pagina .contenedor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.columna-footer {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.columna-footer:last-child {
+    margin-right: 0;
+}
+
+.columna-footer h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.columna-footer p, .columna-footer ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.columna-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.columna-footer ul li {
+    margin-bottom: 8px;
+}
+
+.columna-footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.columna-footer a:hover {
+    color: #ffd700;
+}
+
+.derechos {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 12px;
+}
