@@ -53,6 +53,13 @@
                         </a>
                     </li>
 
+                    <!-- Croonograma -->
+                    <li class="item-menu-secundario">
+                        <a href="../php/admin-calendario.php" class="enlace-secundario enlace-con-submenu">
+                            Cronograma
+                            <span class="indicador-submenu"></span>
+                        </a>
+                    </li>
                     <!-- Menú Plazas con submenú -->
                     <li class="item-menu-secundario">
                         <a href="../php/solicitudes-plazas-admin.php" class="enlace-secundario enlace-con-submenu">
