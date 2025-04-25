@@ -67,6 +67,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
 
             // Iniciar transacción
             $conexion->begin_transaction();
+            
+            // Verificar si el coordinador tiene planeaciones rechazadas (estatus_id = 5)
+            // y cambiarlas a inactivas (estatus_id = 2 y validez_id = 1)
+            $query_actualizar_rechazadas = "UPDATE planeacion SET estatus_id = 2, validez_id = 2 
+                                         WHERE solicitante_id = ? 
+                                         AND estatus_id = 5";
+            
+            $stmt_actualizar = $conexion->prepare($query_actualizar_rechazadas);
+            if (!$stmt_actualizar) {
+                throw new Exception("Error al preparar la consulta de actualización de planeaciones rechazadas");
+            }
+            
+            $stmt_actualizar->bind_param("s", $usuario_id);
+            $stmt_actualizar->execute();
+            $stmt_actualizar->close();
 
             // Insertar planeación
             $stmt = $conexion->prepare("
