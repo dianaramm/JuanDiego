@@ -1,9 +1,11 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menu-toggle');
     const menuLateral = document.getElementById('menu-lateral');
     const botonOcultar = document.getElementById('boton-ocultar');
     
-    
+    // Variable para almacenar si el usuario es superusuario
+    let esSuperUsuario = false;
     
     // Función para actualizar la visibilidad del botón de menú
     function actualizarVisibilidadBoton() {
@@ -13,8 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
             menuToggle.classList.add('visible');
         }
     }
-
-
 
     // Menú esté visible al cargar la página
     menuLateral.classList.add('activo');
@@ -49,8 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
-    // Obtener nombre del usuario desde la sesión
+    // Obtener nombre del usuario y tipo_id desde la sesión
     fetch('../php/menu_sesion.php')
         .then(response => {
             if (!response.ok) {
@@ -61,10 +60,38 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             console.log(data); // Para depuración
             const usuarioElemento = document.querySelector('.icono-usuario').parentElement;
+            
+            // Actualizar el nombre de usuario en el menú
             if (data.usuario && data.usuario !== 'Invitado') {
                 usuarioElemento.innerHTML = `<span class="icono-menu icono-usuario"></span> ${data.usuario}`;
             } else {
                 usuarioElemento.innerHTML = `<span class="icono-menu icono-usuario"></span> Usuario no identificado`;
+            }
+            
+            // Verificar si es superusuario (tipo_id = 1)
+            if (data.tipo_id === 1) {
+                esSuperUsuario = true;
+                
+                // Buscar el elemento "Menú principal" para modificarlo
+                const menuPrincipalElemento = document.querySelector('.icono-menu').parentElement;
+                if (menuPrincipalElemento && menuPrincipalElemento.textContent.includes('Menú principal')) {
+                    menuPrincipalElemento.href = '../html/superusuario.html';
+                }
+                
+                // Agregar opción "Volver a Superusuario" después del menú principal
+                const menuLateral = document.querySelector('.menu-lateral ul');
+                if (menuLateral) {
+                    const volverSuperusuarioItem = document.createElement('li');
+                    volverSuperusuarioItem.innerHTML = `<a href="../html/superusuario.html"><span class="icono-menu icono-regresar"></span> Volver a Superusuario</a>`;
+                    
+                    // Insertar después del menú principal
+                    const menuPrincipalItem = menuLateral.querySelector('li:nth-child(2)');
+                    if (menuPrincipalItem) {
+                        menuLateral.insertBefore(volverSuperusuarioItem, menuPrincipalItem.nextSibling);
+                    } else {
+                        menuLateral.appendChild(volverSuperusuarioItem);
+                    }
+                }
             }
         })
         .catch(error => {
@@ -171,4 +198,4 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         });
-});
+}); 
