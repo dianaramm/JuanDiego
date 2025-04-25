@@ -129,6 +129,7 @@
 
                         <div class="contenedor-botones-principales" style="margin-top: 20px;">
                             <button type="button" id="boton-generar-reporte" class="boton-guardar">GENERAR PDF</button>
+                            <button type="button" id="boton-ver-calendario" class="boton-guardar" onclick="window.location.href='admin-calendario.php'">VER CALENDARIO</button>
                         </div>
                     </div>
                 </div>
