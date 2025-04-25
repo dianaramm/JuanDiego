@@ -59,9 +59,14 @@
                             Control de planeación anual
                             <span class="indicador-submenu"></span>
                         </a>
-                        <ul class="submenu">
-                            <li><a href="../php/ver-planeacion-anual-admin.php">Reportes de planeacion</a></li>
-                        </ul>
+                    </li>
+
+                    <!-- Croonograma -->
+                    <li class="item-menu-secundario">
+                        <a href="../php/admin-calendario.php" class="enlace-secundario enlace-con-submenu">
+                            Cronograma
+                            <span class="indicador-submenu"></span>
+                        </a>
                     </li>
 
                     <!-- Menú Plazas con submenú -->
